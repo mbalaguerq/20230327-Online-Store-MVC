@@ -10,7 +10,7 @@ namespace _20230327_Online_Store_MVC.controlador
     internal class ArticleController
     {
         OnlineStore datos;
-        ArticleController(OnlineStore pdatos)
+        public ArticleController(OnlineStore pdatos)
         {
             this.datos = pdatos;
         }

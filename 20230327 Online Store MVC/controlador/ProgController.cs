@@ -74,6 +74,12 @@ namespace _20230327_Online_Store_MVC.controlador
 
             } while (!sortir); 
         }
+        private void afegirArticles()
+        {
+            ArticleController articleController = new ArticleController(datos);
+            ArticleView articleView = new ArticleView(articleController);
+            ArticleView.afegirArticles();
+        }
 
     }
 }
