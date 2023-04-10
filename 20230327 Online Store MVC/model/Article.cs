@@ -21,5 +21,27 @@ namespace _20230327_Online_Store_MVC.model
             return "Article: " + "\n" + "Codi: " + "\t" + codi + "\n" + "Descripció: " + "\t" + descripcio +
                    "\n" + "Preu: " + "\t" + pvp; 
         }
+
+        /*
+         taulell1.Codi = "STR*2512";
+            taulell1.Descripcio = "Tauló fusta mdf Q1";
+            taulell1.Pvp = 12; 
+
+        taulell2.Codi = "STR*2812";
+            taulell2.Descripcio = "Tauló fusta contrax. Q2";
+            taulell2.Pvp = 9;
+
+        article1.Codi = "PIC*FLEXIMAX";
+            article1.Descripcio = "Matalàs + Somier + coixíns visco ";
+            article1.Pvp = 299;
+
+        vernis1.Codi = "VAL*MATEMALTE";
+            vernis1.Descripcio = "Vernis incolor ref.12534 ";
+            vernis1.Pvp = 25;
+
+        */
+
+
+
     }
 }
