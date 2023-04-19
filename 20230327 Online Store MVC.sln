@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20230327 Online Store MVC", "20230327 Online Store MVC\20230327 Online Store MVC.csproj", "{F2D0A678-433F-47EE-B2F7-2D182E2C84DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Online_Store_Windows_Forms", "Online_Store_Windows_Forms\Online_Store_Windows_Forms.csproj", "{B203A895-AFC8-4DE2-8BD5-5198005491E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F2D0A678-433F-47EE-B2F7-2D182E2C84DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2D0A678-433F-47EE-B2F7-2D182E2C84DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2D0A678-433F-47EE-B2F7-2D182E2C84DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B203A895-AFC8-4DE2-8BD5-5198005491E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B203A895-AFC8-4DE2-8BD5-5198005491E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B203A895-AFC8-4DE2-8BD5-5198005491E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B203A895-AFC8-4DE2-8BD5-5198005491E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
