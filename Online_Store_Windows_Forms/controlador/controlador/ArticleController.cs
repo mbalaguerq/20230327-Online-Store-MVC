@@ -16,6 +16,20 @@ namespace Online_Store_Windows_Forms.controlador
         {
             this.datos = pdatos;
         }
+        public void mostrarArticulos()
+        {
+            List<String> result =  datos.mostrarArticulos();
+
+            MostrarArticulos articulos = new MostrarArticulos(result);
+            articulos.Show();
+            
+        }
+        public void afegirArticles()
+        {
+            NouArticle nouArticle = new NouArticle();
+            nouArticle.Show();
+
+        }
 
     }
 }

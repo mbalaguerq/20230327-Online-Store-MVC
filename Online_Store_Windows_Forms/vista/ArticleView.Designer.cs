@@ -55,6 +55,7 @@
             this.BtmenuPrincipal.TabIndex = 6;
             this.BtmenuPrincipal.Text = "Menú Principal";
             this.BtmenuPrincipal.UseVisualStyleBackColor = false;
+            this.BtmenuPrincipal.Click += new System.EventHandler(this.BtmenuPrincipal_Click);
             // 
             // BtmostrarArticles
             // 
@@ -66,6 +67,7 @@
             this.BtmostrarArticles.TabIndex = 5;
             this.BtmostrarArticles.Text = "Mostrar Articles";
             this.BtmostrarArticles.UseVisualStyleBackColor = false;
+            this.BtmostrarArticles.Click += new System.EventHandler(this.BtmostrarArticles_Click);
             // 
             // BtafegirArticles
             // 
@@ -77,6 +79,7 @@
             this.BtafegirArticles.TabIndex = 4;
             this.BtafegirArticles.Text = "Afegir Articles";
             this.BtafegirArticles.UseVisualStyleBackColor = false;
+            this.BtafegirArticles.Click += new System.EventHandler(this.BtafegirArticles_Click);
             // 
             // label1
             // 

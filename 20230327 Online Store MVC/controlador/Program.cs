@@ -12,7 +12,7 @@ namespace _20230327_Online_Store_MVC
         static void Main(string[] args)
         {
             ProgController controlador = new ProgController();
-            controlador.gestionMenu();
+            //controlador.gestionMenu();
         }
     }
 }

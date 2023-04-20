@@ -17,7 +17,8 @@ namespace Online_Store_Windows_Forms.controlador
 
         public ProgController(OnlineStore pdatos)
         {
-            datos = pdatos;            
+            datos = pdatos;
+            datos.cargarDatos();
         }
         public void menuArticles()
         {

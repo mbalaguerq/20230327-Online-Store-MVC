@@ -14,14 +14,7 @@ using Online_Store_Windows_Forms.controlador;
 namespace Online_Store_Windows_Forms
 {
     partial class MenuPrincipal : Form
-    {
-        ProgController progController;
-
-        public MenuPrincipal(object controlador)
-        {
-            InitializeComponent();
-            progController=(ProgController)controlador;
-        }
+    {        
 
         /// <summary>
         /// Variable del diseñador necesaria.

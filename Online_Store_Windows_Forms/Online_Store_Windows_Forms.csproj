@@ -80,6 +80,18 @@
     <Compile Include="vista\ComandaView.Designer.cs">
       <DependentUpon>ComandaView.cs</DependentUpon>
     </Compile>
+    <Compile Include="vista\MostrarArticulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\MostrarArticulos.Designer.cs">
+      <DependentUpon>MostrarArticulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\NouArticle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\NouArticle.Designer.cs">
+      <DependentUpon>NouArticle.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,6 +112,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="vista\ComandaView.resx">
       <DependentUpon>ComandaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\MostrarArticulos.resx">
+      <DependentUpon>MostrarArticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\NouArticle.resx">
+      <DependentUpon>NouArticle.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
