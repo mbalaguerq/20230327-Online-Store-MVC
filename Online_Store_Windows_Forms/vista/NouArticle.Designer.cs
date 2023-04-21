@@ -40,6 +40,8 @@
             this.txPreu = new System.Windows.Forms.TextBox();
             this.txDescrip = new System.Windows.Forms.TextBox();
             this.lbCampOblig = new System.Windows.Forms.Label();
+            this.lbCampOblig2 = new System.Windows.Forms.Label();
+            this.lbCampOblig3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LbOnlineStore
@@ -131,6 +133,7 @@
             this.txCodi.Name = "txCodi";
             this.txCodi.Size = new System.Drawing.Size(348, 20);
             this.txCodi.TabIndex = 14;
+            this.txCodi.TextChanged += new System.EventHandler(this.txCodi_TextChanged);
             // 
             // txPreu
             // 
@@ -138,6 +141,7 @@
             this.txPreu.Name = "txPreu";
             this.txPreu.Size = new System.Drawing.Size(348, 20);
             this.txPreu.TabIndex = 15;
+            this.txPreu.TextChanged += new System.EventHandler(this.txPreu_TextChanged);
             // 
             // txDescrip
             // 
@@ -145,6 +149,7 @@
             this.txDescrip.Name = "txDescrip";
             this.txDescrip.Size = new System.Drawing.Size(348, 20);
             this.txDescrip.TabIndex = 16;
+            this.txDescrip.TextChanged += new System.EventHandler(this.txDescrip_TextChanged);
             // 
             // lbCampOblig
             // 
@@ -158,12 +163,38 @@
             this.lbCampOblig.Text = "Camp Obligatori";
             this.lbCampOblig.Visible = false;
             // 
+            // lbCampOblig2
+            // 
+            this.lbCampOblig2.AutoSize = true;
+            this.lbCampOblig2.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCampOblig2.ForeColor = System.Drawing.Color.Red;
+            this.lbCampOblig2.Location = new System.Drawing.Point(632, 228);
+            this.lbCampOblig2.Name = "lbCampOblig2";
+            this.lbCampOblig2.Size = new System.Drawing.Size(96, 16);
+            this.lbCampOblig2.TabIndex = 18;
+            this.lbCampOblig2.Text = "Camp Obligatori";
+            this.lbCampOblig2.Visible = false;
+            // 
+            // lbCampOblig3
+            // 
+            this.lbCampOblig3.AutoSize = true;
+            this.lbCampOblig3.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCampOblig3.ForeColor = System.Drawing.Color.Red;
+            this.lbCampOblig3.Location = new System.Drawing.Point(632, 276);
+            this.lbCampOblig3.Name = "lbCampOblig3";
+            this.lbCampOblig3.Size = new System.Drawing.Size(96, 16);
+            this.lbCampOblig3.TabIndex = 19;
+            this.lbCampOblig3.Text = "Camp Obligatori";
+            this.lbCampOblig3.Visible = false;
+            // 
             // NouArticle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbCampOblig3);
+            this.Controls.Add(this.lbCampOblig2);
             this.Controls.Add(this.lbCampOblig);
             this.Controls.Add(this.txDescrip);
             this.Controls.Add(this.txPreu);
@@ -197,5 +228,7 @@
         private System.Windows.Forms.TextBox txPreu;
         private System.Windows.Forms.TextBox txDescrip;
         private System.Windows.Forms.Label lbCampOblig;
+        private System.Windows.Forms.Label lbCampOblig2;
+        private System.Windows.Forms.Label lbCampOblig3;
     }
 }

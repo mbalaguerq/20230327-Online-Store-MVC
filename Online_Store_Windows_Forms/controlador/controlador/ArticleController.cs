@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Online_Store_Windows_Forms;
+using System.Collections;
 
 namespace Online_Store_Windows_Forms.controlador
 {
@@ -19,16 +20,20 @@ namespace Online_Store_Windows_Forms.controlador
         public void mostrarArticulos()
         {
             List<String> result =  datos.mostrarArticulos();
-
             MostrarArticulos articulos = new MostrarArticulos(result);
-            articulos.Show();
-            
+            articulos.Show();            
         }
         public void afegirArticles()
         {
-            NouArticle nouArticle = new NouArticle();
+            //el this es refereix al propi ArticleController
+            NouArticle nouArticle = new NouArticle(this);            
             nouArticle.Show();
-
+        }
+        public bool nouArticle(Hashtable articleHash)
+        {
+            bool existeix = false;
+            existeix = datos.nouArticle(articleHash);
+            return existeix;//ens retorna si l'article s'ha afegit o ja existia
         }
 
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Online_Store_Windows_Forms.controlador;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,15 +10,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Online_Store_Windows_Forms.vista
 {
     public partial class NouArticle : Form
     {
-        public NouArticle()
+        ArticleController articleController;
+        public NouArticle(object controlador)
         {
             InitializeComponent();
+            articleController = (ArticleController)controlador;
         }
-
+        //BOTONS
         private void btEsborrar_Click(object sender, EventArgs e)
         {
             EsborrarDades();
@@ -28,13 +32,12 @@ namespace Online_Store_Windows_Forms.vista
             this.txPreu.Text = "";
             this.txDescrip.Text = string.Empty;
         }
-
         private void btTancar_Click(object sender, EventArgs e)
         {
             //El mètode dispose, elimina l'objecte. Amb això, tanquem el form.
+            //provar this.close
             this.Dispose();
         }
-
         private void btAcceptar_Click(object sender, EventArgs e)
         {
             Hashtable articleHash = new Hashtable();
@@ -43,17 +46,57 @@ namespace Online_Store_Windows_Forms.vista
             {
                 string codi = this.txCodi.Text;
                 articleHash.Add("codi", codi);
+                txCodi.Text ="";
             }
             else
             {
                 this.lbCampOblig.Visible = true;
             }
-            if(!this.txdescrip.Text.Equals(""))
+            if (!this.txDescrip.Text.Equals(""))
+            {
                 string descripcio = this.txDescrip.Text;
-            articleHash.Add("descripcio", descripcio);
+                articleHash.Add("descripcio", descripcio);
+                txDescrip.Text = "";
+            }
+            else
+            {
+                this.lbCampOblig2.Visible = true;
+            }
+            if (!this.txPreu.Text.Equals(""))
+            {
+                decimal preu = decimal.Parse(this.txPreu.Text);
+                articleHash.Add("preu", preu);
+                txPreu.Text = "";
+            }
+            else
+            {
+                this.lbCampOblig3.Visible = true;
+            }
 
-            decimal preu = decimal.Parse(this.txPreu.Text);
-            articleHash.Add("preu", preu);
+            bool existeix = articleController.nouArticle(articleHash);
+
+            if (existeix == true)
+            {
+                MessageBox.Show("l'Article ja existeix");
+            }
+            else
+            {
+                MessageBox.Show("Article afegit correctament");
+            }
         }
+        //EVENTS
+        private void txDescrip_TextChanged(object sender, EventArgs e)
+        {
+            lbCampOblig3.Visible=false;
+        }
+        private void txPreu_TextChanged(object sender, EventArgs e)
+        {
+            lbCampOblig2.Visible = false;
+        }
+        private void txCodi_TextChanged(object sender, EventArgs e)
+        {
+            lbCampOblig.Visible = false;
+        }
+
     }
 }
