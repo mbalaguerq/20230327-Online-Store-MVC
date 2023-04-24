@@ -79,6 +79,7 @@
             this.BtafegirClients.TabIndex = 9;
             this.BtafegirClients.Text = "Afegir Clients";
             this.BtafegirClients.UseVisualStyleBackColor = false;
+            this.BtafegirClients.Click += new System.EventHandler(this.BtafegirClients_Click);
             // 
             // LbOnlineStore
             // 

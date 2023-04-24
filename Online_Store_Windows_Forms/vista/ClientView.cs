@@ -18,7 +18,11 @@ namespace Online_Store_Windows_Forms.vista
         {
             InitializeComponent();
             clientController = (ClientController) controlador;
+        }
 
+        private void BtafegirClients_Click(object sender, EventArgs e)
+        {
+            clientController.afegirClient();
         }
     }
 }

@@ -68,6 +68,12 @@
     <Compile Include="vista\ArticleView.Designer.cs">
       <DependentUpon>ArticleView.cs</DependentUpon>
     </Compile>
+    <Compile Include="vista\ClientVAfegir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\ClientVAfegir.Designer.cs">
+      <DependentUpon>ClientVAfegir.cs</DependentUpon>
+    </Compile>
     <Compile Include="vista\ClientView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </Compile>
     <EmbeddedResource Include="vista\ArticleView.resx">
       <DependentUpon>ArticleView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\ClientVAfegir.resx">
+      <DependentUpon>ClientVAfegir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vista\ClientView.resx">
       <DependentUpon>ClientView.cs</DependentUpon>

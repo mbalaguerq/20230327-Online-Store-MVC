@@ -26,6 +26,12 @@ namespace Online_Store_Windows_Forms.controlador
             ArticleView formArticle = new ArticleView(articleController);
             formArticle.Show();
         }
+        public void menuClients()
+        {
+            ClientController clientController = new ClientController(datos);
+            ClientView formClient = new ClientView(clientController);
+            formClient.Show();
+        }
 
     }
 }

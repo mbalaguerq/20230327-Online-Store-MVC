@@ -11,5 +11,6 @@ namespace Online_Store_Windows_Forms.controlador
 {
     internal class ComandaController
     {
+
     }
 }

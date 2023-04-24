@@ -40,54 +40,62 @@ namespace Online_Store_Windows_Forms.vista
         }
         private void btAcceptar_Click(object sender, EventArgs e)
         {
-            Hashtable articleHash = new Hashtable();
+            try
+            {
 
-            if (!this.txCodi.Text.Equals(""))
-            {
-                string codi = this.txCodi.Text;
-                articleHash.Add("codi", codi);
-                txCodi.Text ="";
-            }
-            else
-            {
-                this.lbCampOblig.Visible = true;
-            }
-            if (!this.txDescrip.Text.Equals(""))
-            {
-                string descripcio = this.txDescrip.Text;
-                articleHash.Add("descripcio", descripcio);
-                txDescrip.Text = "";
-            }
-            else
-            {
-                this.lbCampOblig2.Visible = true;
-            }
-            if (!this.txPreu.Text.Equals(""))
-            {
-                decimal preu = decimal.Parse(this.txPreu.Text);
-                articleHash.Add("preu", preu);
-                txPreu.Text = "";
-            }
-            else
-            {
-                this.lbCampOblig3.Visible = true;
-            }
+                Hashtable articleHash = new Hashtable();
 
-            bool existeix = articleController.nouArticle(articleHash);
+                if (!this.txCodi.Text.Equals(""))
+                {
+                    string codi = this.txCodi.Text;
+                    articleHash.Add("codi", codi);
+                }
+                else
+                {
+                    this.lbCampOblig.Visible = true;
+                }
+                if (!this.txDescrip.Text.Equals(""))
+                {
+                    string descripcio = this.txDescrip.Text;
+                    articleHash.Add("descripcio", descripcio);
+                }
+                else
+                {
+                    this.lbCampOblig2.Visible = true;
+                }
+                if (!this.txPreu.Text.Equals(""))
+                {
+                    decimal preu = decimal.Parse(this.txPreu.Text);
+                    articleHash.Add("preu", preu);
+                }
+                else
+                {
+                    this.lbCampOblig3.Visible = true;
+                }
 
-            if (existeix == true)
-            {
-                MessageBox.Show("l'Article ja existeix");
+                bool existeix = articleController.nouArticle(articleHash);
+
+                if (existeix == true)
+                {
+                    MessageBox.Show("l'Article ja existeix");
+                }
+                else
+                {
+                    MessageBox.Show("Article afegit correctament");
+                    txCodi.Text = "";
+                    txPreu.Text = "";
+                    txDescrip.Text = "";
+                }
             }
-            else
+            catch
             {
-                MessageBox.Show("Article afegit correctament");
+                MessageBox.Show("Omple els camps obligatoris");
             }
         }
         //EVENTS
         private void txDescrip_TextChanged(object sender, EventArgs e)
         {
-            lbCampOblig3.Visible=false;
+            lbCampOblig3.Visible = false;
         }
         private void txPreu_TextChanged(object sender, EventArgs e)
         {

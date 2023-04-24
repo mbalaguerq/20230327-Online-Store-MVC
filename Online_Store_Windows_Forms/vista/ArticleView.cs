@@ -20,17 +20,15 @@ namespace Online_Store_Windows_Forms.vista
             InitializeComponent();
             articleController = (ArticleController)controlador;
         }
-
+        //BOTONS
         private void BtmostrarArticles_Click(object sender, EventArgs e)
         {
             articleController.mostrarArticulos();
         }
-
         private void BtmenuPrincipal_Click(object sender, EventArgs e)
         {
             this.Visible = false;
         }
-
         private void BtafegirArticles_Click(object sender, EventArgs e)
         {
             articleController.afegirArticles();

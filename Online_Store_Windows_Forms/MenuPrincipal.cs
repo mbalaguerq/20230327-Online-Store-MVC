@@ -27,7 +27,10 @@ namespace Online_Store_Windows_Forms
             controller.menuArticles();
             //this.Visible = false;
         }
-
+        private void BtGClients_Click(object sender, EventArgs e)
+        {
+            controller.menuClients();
+        }
     }
 }
 

@@ -80,6 +80,7 @@ namespace Online_Store_Windows_Forms
             this.BtGClients.TabIndex = 2;
             this.BtGClients.Text = "Gestió de Clients";
             this.BtGClients.UseVisualStyleBackColor = false;
+            this.BtGClients.Click += new System.EventHandler(this.BtGClients_Click);
             // 
             // BtGComandes
             // 

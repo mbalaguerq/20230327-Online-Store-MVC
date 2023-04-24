@@ -42,37 +42,56 @@ namespace Online_Store_Windows_Forms.modelo
         }
         public bool nouArticle(Hashtable articleHash)
         {
-            bool existeix = true;
+            if (articleHash.Count == 0 ) { 
+                return true;
+            }
+            bool existeix = false;
             foreach (Article article in articles)
             {
-                if (!article.Codi.Equals(articleHash["codi"]))
+                if (article.Codi.Equals(articleHash["codi"]))
                 {
-                    Article art = new Article();
-                    art.Descripcio = (string)articleHash["descripcio"];
-                    art.Codi = (string)articleHash["codi"];
-                    art.Pvp = (decimal)articleHash["preu"];
-                    articles.Add(art);
+                    existeix = true;
                     //En un foreach, si hi ha una modificació del "list" de 
                     //objectes, s'ha de fer un return dins. Sino dona error.
-                    return false;
-                }
-                else
-                {
                     return true;
                 }
-                
+                else { return true; }
+            }
+            if (!existeix)
+            {
+                Article art = new Article();
+                art.Descripcio = (string)articleHash["descripcio"];
+                art.Codi = (string)articleHash["codi"];
+                art.Pvp = (decimal)articleHash["preu"];
+                articles.Add(art);
+                //En un foreach, si hi ha una modificació del "list" de 
+                //objectes, s'ha de fer un return dins. Sino dona error.
+                return false;
+
             }
             return existeix;
-
-
         }
-
-        /*public void addCliente(Hashtable clienteHas)
+        public bool nouClient(Hashtable clientHash)
         {
-            Cliente cliente = new Cliente();
-            cliente.Nif = (string)clienteHas["Nif"];
-            cliente.Nombre = (string)clienteHas["Nombre"];
-            clientes.Add(cliente);
-        }*/
+            bool existeix = true;
+
+            foreach (Client client in clients)
+            {
+                if (!client.Nif.Equals(clientHash["nif"]))
+                {
+                    Client cli = new Client();
+                    cli.Nif = (string)clientHash["nif"];
+                    cli.Nom = (string)clientHash["nom"];
+                    cli.Domicili = (string)clientHash["domicili"];
+                    cli.Email = (string)clientHash["mail"];
+                    cli.Vip = (bool)clientHash["vip"];
+                    clients.Add(client);
+                    return false;
+                }
+                else { return true; }
+            }
+            return existeix;
+        }
     }
 }
+
