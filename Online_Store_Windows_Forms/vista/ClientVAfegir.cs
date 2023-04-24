@@ -145,7 +145,7 @@ namespace Online_Store_Windows_Forms.vista
                     }
                 }
             }
-            catch { MessageBox.Show("Omple els camps obligatoris"); }
+            catch { MessageBox.Show("S'ha produit un error"); }
         }
 
     }

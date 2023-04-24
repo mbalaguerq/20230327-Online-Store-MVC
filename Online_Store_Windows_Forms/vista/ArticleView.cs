@@ -32,7 +32,6 @@ namespace Online_Store_Windows_Forms.vista
         private void BtafegirArticles_Click(object sender, EventArgs e)
         {
             articleController.afegirArticles();
-
         }
     }
 }

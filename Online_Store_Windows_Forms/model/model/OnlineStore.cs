@@ -43,7 +43,7 @@ namespace Online_Store_Windows_Forms.modelo
         public bool nouArticle(Hashtable articleHash)
         {
             if (articleHash.Count == 0 ) { 
-                return true;
+                return true;//si el hashtable arriba buit
             }
             bool existeix = false;
             foreach (Article article in articles)
@@ -51,11 +51,10 @@ namespace Online_Store_Windows_Forms.modelo
                 if (article.Codi.Equals(articleHash["codi"]))
                 {
                     existeix = true;
-                    //En un foreach, si hi ha una modificació del "list" de 
-                    //objectes, s'ha de fer un return dins. Sino dona error.
+                    
                     return true;
                 }
-                else { return true; }
+                
             }
             if (!existeix)
             {
