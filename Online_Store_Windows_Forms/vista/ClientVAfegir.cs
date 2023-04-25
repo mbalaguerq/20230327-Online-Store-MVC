@@ -145,7 +145,10 @@ namespace Online_Store_Windows_Forms.vista
                     }
                 }
             }
-            catch { MessageBox.Show("S'ha produit un error"); }
+            catch (Exception ex) 
+            { 
+                MessageBox.Show("S'ha produit un error" + ex.Message); 
+            }
         }
 
     }

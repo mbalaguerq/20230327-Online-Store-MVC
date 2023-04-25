@@ -25,13 +25,18 @@ namespace Online_Store_Windows_Forms.modelo
             if (vip = true)
             {
 
-                return "Client VIP" +  "Nom: \t" + nom + "\n" + "Domicili: \t" + domicili + "\n" +
-                       "Nif: \t" + nif + "\n" + "Email:  \t" + email;
+                return "CLIENT VIP" + 
+                        "\r\nNom: \t" + nom + 
+                        "\r\nDomicili: \t" + domicili + 
+                        "\r\nNif: \t" + nif + 
+                        "\r\nEmail:  \t" + email;
             }
             else
             {
-                return "Nom: \t" + nom + "\n" + "Domicili: \t" + domicili + "\n" +
-                       "Nif: \t" + nif + "\n" + "Email:  \t" + email;
+                return "\r\nNom: \t" + nom +
+                        "\r\nDomicili: \t" + domicili +
+                        "\r\nNif: \t" + nif +
+                        "\r\nEmail:  \t" + email;
             }
         }
         

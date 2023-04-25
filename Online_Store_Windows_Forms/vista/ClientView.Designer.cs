@@ -57,6 +57,7 @@
             this.BtmostrarCliStandard.TabIndex = 11;
             this.BtmostrarCliStandard.Text = "Mostrar Clients Standard";
             this.BtmostrarCliStandard.UseVisualStyleBackColor = false;
+            this.BtmostrarCliStandard.Click += new System.EventHandler(this.BtmostrarCliStandard_Click);
             // 
             // BtmostrarClients
             // 
@@ -68,6 +69,7 @@
             this.BtmostrarClients.TabIndex = 10;
             this.BtmostrarClients.Text = "Mostrar Clients";
             this.BtmostrarClients.UseVisualStyleBackColor = false;
+            this.BtmostrarClients.Click += new System.EventHandler(this.BtmostrarClients_Click);
             // 
             // BtafegirClients
             // 
@@ -101,6 +103,7 @@
             this.BtmostrarCliVip.TabIndex = 13;
             this.BtmostrarCliVip.Text = "Mostrar Clients Vip";
             this.BtmostrarCliVip.UseVisualStyleBackColor = false;
+            this.BtmostrarCliVip.Click += new System.EventHandler(this.BtmostrarCliVip_Click);
             // 
             // BtmenuPrincipal
             // 
@@ -112,6 +115,7 @@
             this.BtmenuPrincipal.TabIndex = 14;
             this.BtmenuPrincipal.Text = "Menú Principal";
             this.BtmenuPrincipal.UseVisualStyleBackColor = false;
+            this.BtmenuPrincipal.Click += new System.EventHandler(this.BtmenuPrincipal_Click);
             // 
             // ClientView
             // 

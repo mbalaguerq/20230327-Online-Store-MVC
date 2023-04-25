@@ -24,5 +24,25 @@ namespace Online_Store_Windows_Forms.vista
         {
             clientController.afegirClient();
         }
+
+        private void BtmostrarClients_Click(object sender, EventArgs e)
+        {
+            clientController.mostrarclients();
+        }
+
+        private void BtmostrarCliStandard_Click(object sender, EventArgs e)
+        {
+            clientController.mostrarClientsStan();
+        }
+
+        private void BtmenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void BtmostrarCliVip_Click(object sender, EventArgs e)
+        {
+            clientController.mostrarClientsVip();
+        }
     }
 }

@@ -92,6 +92,24 @@
     <Compile Include="vista\MostrarArticulos.Designer.cs">
       <DependentUpon>MostrarArticulos.cs</DependentUpon>
     </Compile>
+    <Compile Include="vista\MostrarClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\MostrarClients.Designer.cs">
+      <DependentUpon>MostrarClients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\MostrarClientsStan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\MostrarClientsStan.Designer.cs">
+      <DependentUpon>MostrarClientsStan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\MostrarClientsVip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\MostrarClientsVip.Designer.cs">
+      <DependentUpon>MostrarClientsVip.cs</DependentUpon>
+    </Compile>
     <Compile Include="vista\NouArticle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +142,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="vista\MostrarArticulos.resx">
       <DependentUpon>MostrarArticulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\MostrarClients.resx">
+      <DependentUpon>MostrarClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\MostrarClientsStan.resx">
+      <DependentUpon>MostrarClientsStan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\MostrarClientsVip.resx">
+      <DependentUpon>MostrarClientsVip.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vista\NouArticle.resx">
       <DependentUpon>NouArticle.cs</DependentUpon>

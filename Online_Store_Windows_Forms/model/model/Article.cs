@@ -18,8 +18,10 @@ namespace Online_Store_Windows_Forms.modelo
 
         public override string ToString()
         {
-            return "Article: " + "\n" + "Codi: " + "\t" + codi + "\n" + "Descripció: " + "\t" + descripcio +
-                   "\n" + "Preu: " + "\t" + pvp; 
+            return "Article:\r\n " + 
+                   "\r\nCodi: " + "\t" + codi + 
+                   "\r\nDescripció: " + "\t" + descripcio +
+                   "\r\nPreu: " + "\t" + pvp + " Euros"; 
         }
 
         /*

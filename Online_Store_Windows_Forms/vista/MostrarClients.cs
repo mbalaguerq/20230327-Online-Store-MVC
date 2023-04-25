@@ -5,33 +5,30 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Online_Store_Windows_Forms.vista
 {
-    public partial class MostrarArticulos : Form
+    public partial class MostrarClients : Form
     {
-        List<String> articulos;
-
-        public void mostrararticulos()
+        List<string> clients;
+        public void mostrarClients()
         {
-            this.mostraArticles.DataSource = articulos;
-            
+            //tbMostrar clientes el es textbox on s'han de mostrar
+            this.tbMostrarClients.DataSource = clients;
         }
-
-        public MostrarArticulos(List<String> result)
+        public MostrarClients(List<String>result)
         {
             InitializeComponent();
-            articulos = result;
-            mostrararticulos();
-        }
-
+            clients = result;
+            mostrarClients();
+        }                
         private void btTancar_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
+
     }
 }

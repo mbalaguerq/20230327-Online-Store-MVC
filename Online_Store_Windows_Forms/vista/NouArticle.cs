@@ -44,6 +44,7 @@ namespace Online_Store_Windows_Forms.vista
             {
 
                 Hashtable articleHash = new Hashtable();
+                bool faltaAlgun = false;
 
                 if (!this.txCodi.Text.Equals(""))
                 {
@@ -53,7 +54,9 @@ namespace Online_Store_Windows_Forms.vista
                 else
                 {
                     this.lbCampOblig.Visible = true;
+                    faltaAlgun = true;
                 }
+
                 if (!this.txDescrip.Text.Equals(""))
                 {
                     string descripcio = this.txDescrip.Text;
@@ -62,7 +65,9 @@ namespace Online_Store_Windows_Forms.vista
                 else
                 {
                     this.lbCampOblig2.Visible = true;
+                    faltaAlgun = true;
                 }
+
                 if (!this.txPreu.Text.Equals(""))
                 {
                     decimal preu = decimal.Parse(this.txPreu.Text);
@@ -71,25 +76,29 @@ namespace Online_Store_Windows_Forms.vista
                 else
                 {
                     this.lbCampOblig3.Visible = true;
+                    faltaAlgun = true;
                 }
 
-                bool existeix = articleController.nouArticle(articleHash);
+                if (faltaAlgun == false)
+                {
+                    bool existeix = articleController.nouArticle(articleHash);
 
-                if (existeix == true)
-                {
-                    MessageBox.Show("l'Article ja existeix");
-                }
-                else
-                {
-                    MessageBox.Show("Article afegit correctament");
-                    txCodi.Text = "";
-                    txPreu.Text = "";
-                    txDescrip.Text = "";
+                    if (existeix == true)
+                    {
+                        MessageBox.Show("l'Article ja existeix");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Article afegit correctament");
+                        txCodi.Text = "";
+                        txPreu.Text = "";
+                        txDescrip.Text = "";
+                    }
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Omple els camps obligatoris");
+                MessageBox.Show("S'ha produit un error: " + ex.Message);
             }
         }
         //EVENTS

@@ -30,6 +30,25 @@ namespace Online_Store_Windows_Forms.controlador
             existeix= datos.nouClient(clientHash);
             return existeix;//ens retorna si el client s'ha afegit o ja existia
         }
-        
+
+        public void mostrarclients()
+        {
+            List<string> clients = datos.mostrarclients();
+            MostrarClients formClients = new MostrarClients(clients);
+            formClients.Show();
+        }
+        public void mostrarClientsStan()
+        {
+            List<string> clients = datos.mostrarClientsStan();
+            MostrarClientsStan formStan = new MostrarClientsStan(clients);
+            formStan.Show();
+        }
+        public void mostrarClientsVip()
+        {
+            List<string> clients = datos.mostrarClientsVip();
+            MostrarClientsVip formVip = new MostrarClientsVip(clients);
+            formVip.Show();
+        }
+
     }
 }
