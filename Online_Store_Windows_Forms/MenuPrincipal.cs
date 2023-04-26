@@ -31,6 +31,11 @@ namespace Online_Store_Windows_Forms
         {
             controller.menuClients();
         }
+
+        private void BtGComandes_Click(object sender, EventArgs e)
+        {
+            controller.menuComandes();
+        }
     }
 }
 

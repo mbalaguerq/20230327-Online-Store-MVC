@@ -18,7 +18,7 @@ namespace Online_Store_Windows_Forms.controlador
         {
             this.datos = pdatos;
         }
-        public void afegirClient()//mostra from afegir client
+        public void afegirClient()//mostra form afegir client
         {
             ClientVAfegir formafegir = new ClientVAfegir(this);
             formafegir.Show();
@@ -30,7 +30,6 @@ namespace Online_Store_Windows_Forms.controlador
             existeix= datos.nouClient(clientHash);
             return existeix;//ens retorna si el client s'ha afegit o ja existia
         }
-
         public void mostrarclients()
         {
             List<string> clients = datos.mostrarclients();
@@ -49,6 +48,5 @@ namespace Online_Store_Windows_Forms.controlador
             MostrarClientsVip formVip = new MostrarClientsVip(clients);
             formVip.Show();
         }
-
     }
 }

@@ -17,7 +17,11 @@ namespace Online_Store_Windows_Forms.vista
         public void mostrarClientsStan()
         {
             //tbMostrar clientes el es textbox on s'han de mostrar
-            this.tbMostrarClientsVip.DataSource = clients;
+            //this.tbMostrarClientsVip.DataSource = clients;
+            foreach(String s in clients)
+            {
+                this.tbMostrarClientsVip.Items.Add(s);
+            }
         }
 
         public MostrarClientsStan(List<String> result)
@@ -25,6 +29,7 @@ namespace Online_Store_Windows_Forms.vista
             InitializeComponent();
             clients = result;
             mostrarClientsStan();
+
         }
         private void btTancar_Click(object sender, EventArgs e)
         {

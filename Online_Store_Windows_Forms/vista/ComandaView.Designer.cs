@@ -101,6 +101,7 @@
             this.BtafegirComanda.TabIndex = 16;
             this.BtafegirComanda.Text = "Afegir Comandes";
             this.BtafegirComanda.UseVisualStyleBackColor = false;
+            this.BtafegirComanda.Click += new System.EventHandler(this.BtafegirComanda_Click);
             // 
             // LbOnlineStore
             // 

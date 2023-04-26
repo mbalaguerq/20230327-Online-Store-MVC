@@ -92,6 +92,7 @@ namespace Online_Store_Windows_Forms
             this.BtGComandes.TabIndex = 3;
             this.BtGComandes.Text = "Gestió de Comandes";
             this.BtGComandes.UseVisualStyleBackColor = false;
+            this.BtGComandes.Click += new System.EventHandler(this.BtGComandes_Click);
             // 
             // MenuPrincipal
             // 

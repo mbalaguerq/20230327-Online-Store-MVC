@@ -32,6 +32,12 @@ namespace Online_Store_Windows_Forms.controlador
             ClientView formClient = new ClientView(clientController);
             formClient.Show();
         }
+        public void menuComandes()
+        {
+            ComandaController controller = new ComandaController(datos);
+            ComandaView formComanda = new ComandaView(controller);
+            formComanda.Show();
+        }
 
     }
 }

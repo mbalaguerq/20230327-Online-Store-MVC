@@ -19,6 +19,11 @@ namespace Online_Store_Windows_Forms.vista
             InitializeComponent();
             comandaController = (ComandaController) controlador;
         }
+
+        private void BtafegirComanda_Click(object sender, EventArgs e)
+        {
+            comandaController.novaComanda();
+        }
     }
 }
 

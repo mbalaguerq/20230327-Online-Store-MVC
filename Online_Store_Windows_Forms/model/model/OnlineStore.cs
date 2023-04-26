@@ -23,6 +23,9 @@ namespace Online_Store_Windows_Forms.modelo
             clients = new List<Client>();
             comandes = new List<Comanda>();
         }
+        private static int _contador = 500;
+
+
         public void cargarDatos()
         {
             Article article1 = new Article();
@@ -68,11 +71,11 @@ namespace Online_Store_Windows_Forms.modelo
             {
                 result.Add("ARTICLE: ");
                 result.Add("Codi: " + article.Codi);
-                result.Add("Descripció:"  + article.Descripcio);
+                result.Add("Descripció:" + article.Descripcio);
                 result.Add("Preu: " + article.Pvp + "Euros");
                 result.Add("");
             }
-            return result;           
+            return result;
         }
         public List<string> mostrarclients()
         {
@@ -80,18 +83,18 @@ namespace Online_Store_Windows_Forms.modelo
 
             foreach (Client client in clients)
             {
-                if(client.Vip==true)
+                if (client.Vip == true)
                 {
                     result.Add("CLIENT VIP:");
                 }
                 result.Add("NOM: " + client.Nom);
-                result.Add("NIF: " +  client.Nif);
-                result.Add("ADREÇA: " + client.Domicili); 
+                result.Add("NIF: " + client.Nif);
+                result.Add("ADREÇA: " + client.Domicili);
                 result.Add("E-MAIL: " + client.Email);
                 result.Add("");
             }
             return result;
-        }  
+        }
         public List<string> mostrarClientsStan()
         {
             List<string> result = new List<string>();
@@ -157,13 +160,13 @@ namespace Online_Store_Windows_Forms.modelo
         }
         public bool nouClient(Hashtable clientHash)
         {
-            bool existeix=false;
+            bool existeix = false;
 
             foreach (Client client in clients)
             {
                 if (client.Nif.Equals(clientHash["nif"]))
                 {
-                    existeix= true;
+                    existeix = true;
                 }
                 else
                 {
@@ -174,14 +177,33 @@ namespace Online_Store_Windows_Forms.modelo
                     cli.Email = (string)clientHash["mail"];
                     cli.Vip = (bool)clientHash["vip"];
                     clients.Add(cli);
-                    existeix= false;
+                    existeix = false;
                     return existeix;
                 }
             }
             return existeix;
         }
-
-
+        public int nouNComanda()
+        {
+            _contador++;
+            return _contador;
+        }
+        public List<string> getArticleBycodi(string codi)
+        {
+            List<string> list = new List<string>();
+            foreach (Article arti in articles)
+            {
+                if (arti.Codi.Equals(codi))
+                {
+                    list.Add(arti.Codi);
+                    list.Add(arti.Descripcio);
+                    list.Add(arti.Pvp.ToString());
+                    list.Add("");
+                    return list;
+                }                
+            }
+            return list;
+        }
     }
 }
 

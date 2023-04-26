@@ -116,6 +116,12 @@
     <Compile Include="vista\NouArticle.Designer.cs">
       <DependentUpon>NouArticle.cs</DependentUpon>
     </Compile>
+    <Compile Include="vista\NovaComanda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\NovaComanda.Designer.cs">
+      <DependentUpon>NovaComanda.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="vista\NouArticle.resx">
       <DependentUpon>NouArticle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\NovaComanda.resx">
+      <DependentUpon>NovaComanda.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
