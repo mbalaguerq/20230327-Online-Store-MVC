@@ -86,6 +86,12 @@
     <Compile Include="vista\ComandaView.Designer.cs">
       <DependentUpon>ComandaView.cs</DependentUpon>
     </Compile>
+    <Compile Include="vista\EliminarComanda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\EliminarComanda.Designer.cs">
+      <DependentUpon>EliminarComanda.cs</DependentUpon>
+    </Compile>
     <Compile Include="vista\MostrarArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="vista\ArticleView.resx">
       <DependentUpon>ArticleView.cs</DependentUpon>
@@ -145,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="vista\ComandaView.resx">
       <DependentUpon>ComandaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\EliminarComanda.resx">
+      <DependentUpon>EliminarComanda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vista\MostrarArticulos.resx">
       <DependentUpon>MostrarArticulos.cs</DependentUpon>
@@ -176,6 +186,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2023-04-28 090306.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foto fons.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

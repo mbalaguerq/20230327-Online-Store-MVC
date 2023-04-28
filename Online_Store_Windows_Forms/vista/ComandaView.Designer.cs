@@ -35,24 +35,27 @@
             this.BteliminarComanda = new System.Windows.Forms.Button();
             this.BtafegirComanda = new System.Windows.Forms.Button();
             this.LbOnlineStore = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // BtmenuPrincipal
             // 
             this.BtmenuPrincipal.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BtmenuPrincipal.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtmenuPrincipal.Location = new System.Drawing.Point(288, 373);
+            this.BtmenuPrincipal.Location = new System.Drawing.Point(286, 345);
             this.BtmenuPrincipal.Name = "BtmenuPrincipal";
             this.BtmenuPrincipal.Size = new System.Drawing.Size(247, 28);
             this.BtmenuPrincipal.TabIndex = 21;
             this.BtmenuPrincipal.Text = "Menú Principal";
             this.BtmenuPrincipal.UseVisualStyleBackColor = false;
+            this.BtmenuPrincipal.Click += new System.EventHandler(this.BtmenuPrincipal_Click);
             // 
             // BtmostrarComEnviades
             // 
             this.BtmostrarComEnviades.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BtmostrarComEnviades.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtmostrarComEnviades.Location = new System.Drawing.Point(288, 320);
+            this.BtmostrarComEnviades.Location = new System.Drawing.Point(286, 292);
             this.BtmostrarComEnviades.Name = "BtmostrarComEnviades";
             this.BtmostrarComEnviades.Size = new System.Drawing.Size(247, 28);
             this.BtmostrarComEnviades.TabIndex = 20;
@@ -73,7 +76,7 @@
             // 
             this.BtComPendEnviament.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BtComPendEnviament.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtComPendEnviament.Location = new System.Drawing.Point(288, 269);
+            this.BtComPendEnviament.Location = new System.Drawing.Point(286, 241);
             this.BtComPendEnviament.Name = "BtComPendEnviament";
             this.BtComPendEnviament.Size = new System.Drawing.Size(247, 28);
             this.BtComPendEnviament.TabIndex = 18;
@@ -84,18 +87,19 @@
             // 
             this.BteliminarComanda.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BteliminarComanda.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BteliminarComanda.Location = new System.Drawing.Point(288, 210);
+            this.BteliminarComanda.Location = new System.Drawing.Point(286, 182);
             this.BteliminarComanda.Name = "BteliminarComanda";
             this.BteliminarComanda.Size = new System.Drawing.Size(247, 29);
             this.BteliminarComanda.TabIndex = 17;
             this.BteliminarComanda.Text = "Eliminar Comanda";
             this.BteliminarComanda.UseVisualStyleBackColor = false;
+            this.BteliminarComanda.Click += new System.EventHandler(this.BteliminarComanda_Click);
             // 
             // BtafegirComanda
             // 
             this.BtafegirComanda.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BtafegirComanda.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtafegirComanda.Location = new System.Drawing.Point(288, 153);
+            this.BtafegirComanda.Location = new System.Drawing.Point(286, 125);
             this.BtafegirComanda.Name = "BtafegirComanda";
             this.BtafegirComanda.Size = new System.Drawing.Size(247, 26);
             this.BtafegirComanda.TabIndex = 16;
@@ -113,11 +117,23 @@
             this.LbOnlineStore.TabIndex = 15;
             this.LbOnlineStore.Text = "OnlineStore";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Online_Store_Windows_Forms.Properties.Resources.Captura_de_pantalla_2023_04_28_090306;
+            this.pictureBox1.Location = new System.Drawing.Point(88, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(226, 33);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 89;
+            this.pictureBox1.TabStop = false;
+            // 
             // ComandaView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BtmenuPrincipal);
             this.Controls.Add(this.BtmostrarComEnviades);
             this.Controls.Add(this.label1);
@@ -127,6 +143,7 @@
             this.Controls.Add(this.LbOnlineStore);
             this.Name = "ComandaView";
             this.Text = "ComandaView";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,5 +158,6 @@
         private System.Windows.Forms.Button BteliminarComanda;
         private System.Windows.Forms.Button BtafegirComanda;
         private System.Windows.Forms.Label LbOnlineStore;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

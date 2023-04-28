@@ -46,9 +46,11 @@
             this.LbOnlineStore = new System.Windows.Forms.Label();
             this.textdata = new System.Windows.Forms.TextBox();
             this.btBuscarArticle = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btNifClient = new System.Windows.Forms.Button();
             this.lbMostraR = new System.Windows.Forms.ListBox();
             this.lbCampOblig3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbCampOblig
@@ -69,6 +71,7 @@
             this.txNifClient.Name = "txNifClient";
             this.txNifClient.Size = new System.Drawing.Size(226, 20);
             this.txNifClient.TabIndex = 56;
+            this.txNifClient.TextChanged += new System.EventHandler(this.txNifClient_TextChanged);
             // 
             // lbVip
             // 
@@ -108,6 +111,7 @@
             this.txunitats.Name = "txunitats";
             this.txunitats.Size = new System.Drawing.Size(226, 20);
             this.txunitats.TabIndex = 50;
+            this.txunitats.TextChanged += new System.EventHandler(this.txunitats_TextChanged);
             // 
             // txArticle
             // 
@@ -136,6 +140,7 @@
             this.btAcceptar.TabIndex = 47;
             this.btAcceptar.Text = "Acceptar";
             this.btAcceptar.UseVisualStyleBackColor = false;
+            this.btAcceptar.Click += new System.EventHandler(this.btAcceptar_Click);
             // 
             // btEsborrar
             // 
@@ -231,16 +236,17 @@
             this.btBuscarArticle.UseVisualStyleBackColor = false;
             this.btBuscarArticle.Click += new System.EventHandler(this.btBuscarArticle_Click);
             // 
-            // button1
+            // btNifClient
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(597, 189);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 21);
-            this.button1.TabIndex = 61;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btNifClient.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btNifClient.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btNifClient.Location = new System.Drawing.Point(597, 189);
+            this.btNifClient.Name = "btNifClient";
+            this.btNifClient.Size = new System.Drawing.Size(81, 21);
+            this.btNifClient.TabIndex = 61;
+            this.btNifClient.Text = "Buscar";
+            this.btNifClient.UseVisualStyleBackColor = false;
+            this.btNifClient.Click += new System.EventHandler(this.button1_Click);
             // 
             // lbMostraR
             // 
@@ -263,17 +269,27 @@
             this.lbCampOblig3.TabIndex = 63;
             this.lbCampOblig3.Text = "Camp Obligatori";
             this.lbCampOblig3.Visible = false;
-            
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Online_Store_Windows_Forms.Properties.Resources.Captura_de_pantalla_2023_04_28_090306;
+            this.pictureBox1.Location = new System.Drawing.Point(86, 26);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(226, 33);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 88;
+            this.pictureBox1.TabStop = false;
             // 
             // NovaComanda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbCampOblig3);
             this.Controls.Add(this.lbMostraR);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btNifClient);
             this.Controls.Add(this.btBuscarArticle);
             this.Controls.Add(this.textdata);
             this.Controls.Add(this.lbCampOblig);
@@ -295,6 +311,7 @@
             this.Name = "NovaComanda";
             this.Text = "NovaComanda";
             this.Load += new System.EventHandler(this.NovaComanda_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,8 +336,9 @@
         private System.Windows.Forms.Label LbOnlineStore;
         private System.Windows.Forms.TextBox textdata;
         private System.Windows.Forms.Button btBuscarArticle;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btNifClient;
         private System.Windows.Forms.ListBox lbMostraR;
         private System.Windows.Forms.Label lbCampOblig3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

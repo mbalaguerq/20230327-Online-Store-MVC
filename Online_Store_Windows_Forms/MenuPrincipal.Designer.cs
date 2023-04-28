@@ -46,6 +46,8 @@ namespace Online_Store_Windows_Forms
             this.BtGArticles = new System.Windows.Forms.Button();
             this.BtGClients = new System.Windows.Forms.Button();
             this.BtGComandes = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // LbOnlineStore
@@ -62,7 +64,7 @@ namespace Online_Store_Windows_Forms
             // 
             this.BtGArticles.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BtGArticles.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtGArticles.Location = new System.Drawing.Point(320, 78);
+            this.BtGArticles.Location = new System.Drawing.Point(300, 173);
             this.BtGArticles.Name = "BtGArticles";
             this.BtGArticles.Size = new System.Drawing.Size(181, 26);
             this.BtGArticles.TabIndex = 1;
@@ -74,7 +76,7 @@ namespace Online_Store_Windows_Forms
             // 
             this.BtGClients.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BtGClients.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtGClients.Location = new System.Drawing.Point(320, 135);
+            this.BtGClients.Location = new System.Drawing.Point(300, 230);
             this.BtGClients.Name = "BtGClients";
             this.BtGClients.Size = new System.Drawing.Size(181, 29);
             this.BtGClients.TabIndex = 2;
@@ -86,7 +88,7 @@ namespace Online_Store_Windows_Forms
             // 
             this.BtGComandes.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BtGComandes.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtGComandes.Location = new System.Drawing.Point(320, 195);
+            this.BtGComandes.Location = new System.Drawing.Point(300, 290);
             this.BtGComandes.Name = "BtGComandes";
             this.BtGComandes.Size = new System.Drawing.Size(181, 28);
             this.BtGComandes.TabIndex = 3;
@@ -94,18 +96,31 @@ namespace Online_Store_Windows_Forms
             this.BtGComandes.UseVisualStyleBackColor = false;
             this.BtGComandes.Click += new System.EventHandler(this.BtGComandes_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Online_Store_Windows_Forms.Properties.Resources.Captura_de_pantalla_2023_04_28_090306;
+            this.pictureBox1.Location = new System.Drawing.Point(88, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(226, 33);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 88;
+            this.pictureBox1.TabStop = false;
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(812, 491);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BtGComandes);
             this.Controls.Add(this.BtGClients);
             this.Controls.Add(this.BtGArticles);
             this.Controls.Add(this.LbOnlineStore);
             this.Name = "MenuPrincipal";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,6 +132,7 @@ namespace Online_Store_Windows_Forms
         private System.Windows.Forms.Button BtGArticles;
         private System.Windows.Forms.Button BtGClients;
         private System.Windows.Forms.Button BtGComandes;
+        private PictureBox pictureBox1;
     }
 }
 

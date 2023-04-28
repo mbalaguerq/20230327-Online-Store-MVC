@@ -22,7 +22,7 @@ namespace Online_Store_Windows_Forms.modelo
 
         public override string ToString()
         {
-            if (vip = true)
+            if (vip == true)
             {
 
                 return "CLIENT VIP" + 

@@ -35,6 +35,8 @@
             this.LbOnlineStore = new System.Windows.Forms.Label();
             this.BtmostrarCliVip = new System.Windows.Forms.Button();
             this.BtmenuPrincipal = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -51,7 +53,7 @@
             // 
             this.BtmostrarCliStandard.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BtmostrarCliStandard.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtmostrarCliStandard.Location = new System.Drawing.Point(288, 269);
+            this.BtmostrarCliStandard.Location = new System.Drawing.Point(285, 228);
             this.BtmostrarCliStandard.Name = "BtmostrarCliStandard";
             this.BtmostrarCliStandard.Size = new System.Drawing.Size(232, 28);
             this.BtmostrarCliStandard.TabIndex = 11;
@@ -63,7 +65,7 @@
             // 
             this.BtmostrarClients.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BtmostrarClients.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtmostrarClients.Location = new System.Drawing.Point(288, 210);
+            this.BtmostrarClients.Location = new System.Drawing.Point(285, 169);
             this.BtmostrarClients.Name = "BtmostrarClients";
             this.BtmostrarClients.Size = new System.Drawing.Size(232, 29);
             this.BtmostrarClients.TabIndex = 10;
@@ -75,7 +77,7 @@
             // 
             this.BtafegirClients.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BtafegirClients.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtafegirClients.Location = new System.Drawing.Point(288, 153);
+            this.BtafegirClients.Location = new System.Drawing.Point(285, 112);
             this.BtafegirClients.Name = "BtafegirClients";
             this.BtafegirClients.Size = new System.Drawing.Size(232, 26);
             this.BtafegirClients.TabIndex = 9;
@@ -97,7 +99,7 @@
             // 
             this.BtmostrarCliVip.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BtmostrarCliVip.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtmostrarCliVip.Location = new System.Drawing.Point(288, 320);
+            this.BtmostrarCliVip.Location = new System.Drawing.Point(285, 279);
             this.BtmostrarCliVip.Name = "BtmostrarCliVip";
             this.BtmostrarCliVip.Size = new System.Drawing.Size(232, 28);
             this.BtmostrarCliVip.TabIndex = 13;
@@ -109,7 +111,7 @@
             // 
             this.BtmenuPrincipal.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BtmenuPrincipal.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtmenuPrincipal.Location = new System.Drawing.Point(288, 373);
+            this.BtmenuPrincipal.Location = new System.Drawing.Point(285, 332);
             this.BtmenuPrincipal.Name = "BtmenuPrincipal";
             this.BtmenuPrincipal.Size = new System.Drawing.Size(232, 28);
             this.BtmenuPrincipal.TabIndex = 14;
@@ -117,11 +119,23 @@
             this.BtmenuPrincipal.UseVisualStyleBackColor = false;
             this.BtmenuPrincipal.Click += new System.EventHandler(this.BtmenuPrincipal_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Online_Store_Windows_Forms.Properties.Resources.Captura_de_pantalla_2023_04_28_090306;
+            this.pictureBox1.Location = new System.Drawing.Point(88, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(226, 33);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 89;
+            this.pictureBox1.TabStop = false;
+            // 
             // ClientView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BtmenuPrincipal);
             this.Controls.Add(this.BtmostrarCliVip);
             this.Controls.Add(this.label1);
@@ -131,6 +145,7 @@
             this.Controls.Add(this.LbOnlineStore);
             this.Name = "ClientView";
             this.Text = "ClientView";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,5 +160,6 @@
         private System.Windows.Forms.Label LbOnlineStore;
         private System.Windows.Forms.Button BtmostrarCliVip;
         private System.Windows.Forms.Button BtmenuPrincipal;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

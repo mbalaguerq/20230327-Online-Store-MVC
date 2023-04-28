@@ -37,31 +37,86 @@ namespace Online_Store_Windows_Forms.vista
             this.lbMostraR.Items.Clear();
 
         }
-        
+        private void txArticle_TextChanged(object sender, EventArgs e)
+        {
+            lbCampOblig3.Visible = false;
+
+        }
+        private void txunitats_TextChanged(object sender, EventArgs e)
+        {
+            lbCampOblig2.Visible = false;
+        }
+        private void txNifClient_TextChanged(object sender, EventArgs e)
+        {
+            lbCampOblig.Visible = false;
+        }
         private void btBuscarArticle_Click(object sender, EventArgs e)
         {
-            List<String> articleTrobat = comandaController.getArticleBycodi(this.txArticle.Text);
+            if (!txArticle.Text.Equals(""))
+            {
+                List<String> articleTrobat = comandaController.getArticleBycodi(this.txArticle.Text.ToLower());
 
-            //COUNT ENS CONTROLA QUANTS ELEMENTS RETORNEN AMB AQUEST LIST
-            if (articleTrobat.Count() == 0)
-            {
-                MessageBox.Show("No hi ha cap article amb aquest codi");
+                //COUNT ENS CONTROLA QUANTS ELEMENTS RETORNEN AMB AQUEST LIST
+                if (articleTrobat.Count() == 0)
+                {
+                    MessageBox.Show("No hi ha cap article amb aquest codi");
+                    txArticle.Text = "";
+                }
+                else
+                {
+                    this.txArticle.Text = articleTrobat[0];
+                    foreach (String s in articleTrobat)
+                    {
+                        this.lbMostraR.Items.Add(s);
+                    }
+                }
             }
-            else
+            else { lbCampOblig3.Visible = true; }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (!txNifClient.Text.Equals(""))
             {
-                this.txArticle.Text = articleTrobat[0];
-                foreach (String s in articleTrobat)
+                List<String> clientTrobat = comandaController.getClientByNif(this.txNifClient.Text.ToUpper());
+
+                if (clientTrobat.Count() == 0)
+                {
+                    MessageBox.Show("No hi ha cap Client amb aquest Nif");
+                    txNifClient.Text = "";
+                }
+                else
+                {
+                    this.txNifClient.Text = clientTrobat[0];
+                    foreach (String s in clientTrobat)
+                    {
+                        this.lbMostraR.Items.Add(s);
+                    }
+                }
+            }
+            else { lbCampOblig.Visible = true; }
+        }
+        private void btAcceptar_Click(object sender, EventArgs e)
+        {
+            if (!txunitats.Text.Equals(""))
+            {
+                int quantitat = int.Parse(txunitats.Text);
+                string codi = txArticle.Text.ToLower();
+
+                List<string> preuFinal = new List<string>();
+
+                preuFinal = comandaController.getPreuByUnitats(quantitat, codi);
+                foreach (String s in preuFinal)
                 {
                     this.lbMostraR.Items.Add(s);
                 }
+                comandaController.creaComanda(txNComanda.Text, txunitats.Text, textdata.Text,
+                                              txNifClient.Text, txArticle.Text);
+
+
             }
-        }
-        private void txArticle_TextChanged(object sender, EventArgs e)
-        {
-
+            else
+            { lbCampOblig2.Visible = true; }
 
         }
-
     }
-
 }

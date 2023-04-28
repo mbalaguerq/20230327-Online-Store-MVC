@@ -61,6 +61,25 @@ namespace Online_Store_Windows_Forms.modelo
             cli2.Email = "notincvida14@hotmail.com";
             cli2.Vip = false;
             clients.Add(cli2);
+
+            Comanda comanda1 = new Comanda();
+            comanda1.NComanda = 499;
+            comanda1.DataAvui = DateTime.Parse("01/01/2023");
+            comanda1.Unitats = 6;
+            comanda1.Article = article3;
+            comanda1.Client = cli1;
+            comandes.Add(comanda1);
+
+            Comanda comanda2 = new Comanda();
+            comanda2.NComanda = 498;
+            comanda2.DataAvui = DateTime.Parse("12/04/2023");
+            comanda2.Unitats = 1;
+            comanda2.Article = article1;
+            comanda2.Client = cli2;
+            comandes.Add(comanda2);
+
+
+
         }
 
         public List<string> mostrarArticulos()
@@ -200,10 +219,89 @@ namespace Online_Store_Windows_Forms.modelo
                     list.Add(arti.Pvp.ToString());
                     list.Add("");
                     return list;
-                }                
+                }
             }
             return list;
         }
+        public List<string> getClientByNif(string nif)
+        {
+            List<string> list = new List<string>();
+
+            foreach (Client cli in clients)
+            {
+                if (cli.Nif.Equals(nif))
+                {
+                    list.Add(cli.Nif);
+                    list.Add(cli.Nom);
+                    list.Add(cli.Domicili);
+                    list.Add(cli.Email);
+                    list.Add("");
+                    return list;
+                }
+            }
+            return list;
+        }
+        public List<string> getPreuByUnitats(int quantitat, string codi)
+        {
+            List<string> list = new List<string>();
+            foreach (Article arti in articles)
+            {
+                if (arti.Codi.Equals(codi))
+                {
+                    decimal preuTotal;
+                    preuTotal = arti.Pvp * quantitat;
+
+                    list.Add("Preu x unitat" + arti.Pvp.ToString());
+                    list.Add("Unitats: " + quantitat.ToString());
+                    list.Add("Preu Total: " + preuTotal.ToString());
+                    return list;
+                }
+            }
+            return list;
+        }
+        public void creaComanda(string txNComanda, string txunitats, string textdata,
+                                   string txNifClient, string txArticle)
+        {
+            Comanda novaComanda = new Comanda();
+            novaComanda.NComanda = int.Parse(txNComanda);
+            novaComanda.Unitats = int.Parse(txunitats);
+            novaComanda.DataAvui = DateTime.Parse(textdata);
+
+            foreach (Article arti in articles)
+                if (arti.Codi == txArticle)
+                {
+                    novaComanda.Article = arti;
+                }
+            foreach (Client client in clients)
+            {
+                if (client.Nif.Equals(txNifClient))
+                {
+                    novaComanda.Client = client;
+                }
+            }
+            comandes.Add(novaComanda);
+        }
+        public List<string> esborrarComanda(string txtNifoComanda)
+        {
+            List<string> list = new List<string>();
+
+            foreach (Comanda comanda in comandes)
+            {//corregir això. fer dos mètodes
+                if (comanda.NComanda.Equals(txtNifoComanda) || comanda.Client.Nif.Equals(txtNifoComanda))
+                {
+                    list.Add("Comanda " + comanda.NComanda);
+                    list.Add("Client: " + comanda.Client.Nom);
+                    list.Add("Nif: " + comanda.Client.Nif);
+                    list.Add("Adreça: " + comanda.Client.Domicili);
+                    list.Add("Article: " + comanda.Article.Descripcio);
+                    list.Add("Unitats: " + comanda.Unitats.ToString());
+                    list.Add("Preu/Unitat: " + comanda.Article.Pvp.ToString());
+                    list.Add("Preu Total: " + (comanda.Article.Pvp * comanda.Unitats).ToString() + "Euros");
+                    return list;
+                }
+            }return list;
+        }
+
     }
 }
 

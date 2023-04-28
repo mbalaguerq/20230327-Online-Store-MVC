@@ -42,6 +42,8 @@
             this.lbCampOblig = new System.Windows.Forms.Label();
             this.lbCampOblig2 = new System.Windows.Forms.Label();
             this.lbCampOblig3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // LbOnlineStore
@@ -187,12 +189,23 @@
             this.lbCampOblig3.Text = "Camp Obligatori";
             this.lbCampOblig3.Visible = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Online_Store_Windows_Forms.Properties.Resources.Captura_de_pantalla_2023_04_28_090306;
+            this.pictureBox1.Location = new System.Drawing.Point(87, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(226, 33);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 89;
+            this.pictureBox1.TabStop = false;
+            // 
             // NouArticle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbCampOblig3);
             this.Controls.Add(this.lbCampOblig2);
             this.Controls.Add(this.lbCampOblig);
@@ -209,6 +222,7 @@
             this.Controls.Add(this.btTancar);
             this.Name = "NouArticle";
             this.Text = "NouArticle";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,5 +244,6 @@
         private System.Windows.Forms.Label lbCampOblig;
         private System.Windows.Forms.Label lbCampOblig2;
         private System.Windows.Forms.Label lbCampOblig3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -24,6 +24,16 @@ namespace Online_Store_Windows_Forms.vista
         {
             comandaController.novaComanda();
         }
+
+        private void BtmenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void BteliminarComanda_Click(object sender, EventArgs e)
+        {
+            comandaController.eliminarComanda();
+        }
     }
 }
 

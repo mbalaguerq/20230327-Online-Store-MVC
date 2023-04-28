@@ -30,5 +30,9 @@ namespace Online_Store_Windows_Forms.vista
             this.Dispose();
         }
 
+        private void MostrarClients_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

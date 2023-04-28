@@ -20,7 +20,12 @@ namespace Online_Store_Windows_Forms.controlador
         public void novaComanda()
         {
             NovaComanda novaComanda = new NovaComanda(this);
-            novaComanda.Show();            
+            novaComanda.Show();
+        }
+        public void eliminarComanda()
+        {
+            EliminarComanda formEliminar = new EliminarComanda(this);
+            formEliminar.Show();
         }
         public int nouNComanda()
         {
@@ -30,9 +35,32 @@ namespace Online_Store_Windows_Forms.controlador
         public List<string> getArticleBycodi(string codi)
         {
             List<string> list = new List<string>();
-            list=datos.getArticleBycodi(codi);
+            list = datos.getArticleBycodi(codi);
             return list;
         }
+        public List<string> getClientByNif(string nif)
+        {
+            List<string> list = new List<string>();
+            list = datos.getClientByNif(nif);
+            return list;
+        }
+        public List<string> getPreuByUnitats(int quantitat, string codi)
+        {
+            List<string> list = new List<string>();
+            list = datos.getPreuByUnitats(quantitat, codi);
+            return list;
+        }
+        public void creaComanda(string txNComanda, string txunitats, string textdata,
+                                string txNifClient, string txArticle)
+        {
+            datos.creaComanda(txNComanda, txunitats, textdata, txNifClient, txArticle);
+        }
+        public List<string> esborrarComanda(string txtNifoComanda)
+        {
+            List<string> list = new List<string>();
 
+            list = datos.esborrarComanda(txtNifoComanda);
+            return list;
+        }
     }
 }
