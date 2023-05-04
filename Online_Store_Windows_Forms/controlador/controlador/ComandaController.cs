@@ -62,5 +62,13 @@ namespace Online_Store_Windows_Forms.controlador
             list = datos.esborrarComanda(txtNifoComanda);
             return list;
         }
+        public List<string> esborrarComandaCom(string txtNifoComanda)
+        {
+            List<string> list = new List<string>();
+
+            list = datos.esborrarComandaCom(txtNifoComanda);
+            return list;
+        }
+
     }
 }

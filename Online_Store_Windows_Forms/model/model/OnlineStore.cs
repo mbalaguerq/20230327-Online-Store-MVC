@@ -77,9 +77,6 @@ namespace Online_Store_Windows_Forms.modelo
             comanda2.Article = article1;
             comanda2.Client = cli2;
             comandes.Add(comanda2);
-
-
-
         }
 
         public List<string> mostrarArticulos()
@@ -286,8 +283,8 @@ namespace Online_Store_Windows_Forms.modelo
             List<string> list = new List<string>();
 
             foreach (Comanda comanda in comandes)
-            {//corregir això. fer dos mètodes
-                if (comanda.NComanda.Equals(txtNifoComanda) || comanda.Client.Nif.Equals(txtNifoComanda))
+            {
+                if (comanda.Client.Nif.Equals(txtNifoComanda))
                 {
                     list.Add("Comanda " + comanda.NComanda);
                     list.Add("Client: " + comanda.Client.Nom);
@@ -300,6 +297,28 @@ namespace Online_Store_Windows_Forms.modelo
                     return list;
                 }
             }return list;
+        }
+        public List<string> esborrarComandaCom(string txtNifoComanda)
+        {
+            List<string> list = new List<string>();
+
+            foreach (Comanda comanda in comandes)
+            {             
+               string coman = comanda.NComanda.ToString();
+                if (coman == txtNifoComanda)
+                {
+                    list.Add("Comanda " + comanda.NComanda);
+                    list.Add("Client: " + comanda.Client.Nom);
+                    list.Add("Nif: " + comanda.Client.Nif);
+                    list.Add("Adreça: " + comanda.Client.Domicili);
+                    list.Add("Article: " + comanda.Article.Descripcio);
+                    list.Add("Unitats: " + comanda.Unitats.ToString());
+                    list.Add("Preu/Unitat: " + comanda.Article.Pvp.ToString());
+                    list.Add("Preu Total: " + (comanda.Article.Pvp * comanda.Unitats).ToString() + "Euros");
+                    return list;
+                }
+            }
+            return list;
         }
 
     }

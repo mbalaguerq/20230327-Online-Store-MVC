@@ -51,15 +51,15 @@ namespace Online_Store_Windows_Forms.vista
         }
         private void btBuscar_Click(object sender, EventArgs e)
         {
-            if (rBComanda.Checked)
+            if (rBNifClient.Checked)
             {
-                if (!txtNifoComanda.Text.Equals("") && !txtNifoComanda.Text.Contains("0123456789"))
+                if (!txtNifoComanda.Text.Equals(""))
                 {
                     List<string> comTrobada = new List<string>();
                     comTrobada = comandaController.esborrarComanda(txtNifoComanda.Text);
                     if (comTrobada.Count() == 0)
                     {
-                        MessageBox.Show("No hi ha cap Comanda amb aquest número");
+                        MessageBox.Show("No hi ha cap Nif amb aquest número");
                         txtNifoComanda.Text = "";
                     }
                     else
@@ -70,15 +70,38 @@ namespace Online_Store_Windows_Forms.vista
                         }
                     }
                 }
-                else if (!txtNifoComanda.Equals("") && !txtNifoComanda.Text.Contains("0123456789"))
+                //&& 
+
+            }
+            else if (rBComanda.Checked)
+            {
+                if (txtNifoComanda.Text.Contains("0123456789"))
                 {
                     MessageBox.Show("El Nºde comanda només pot contenir números");
                 }
-                else
+                else if (!txtNifoComanda.Equals("") && txtNifoComanda.Text.Contains("0123456789"))
                 {
-                    MessageBox.Show("Introdueix el Nºde Comanda");
+                    List<string> comTrobada = new List<string>();
+                    comTrobada = comandaController.esborrarComandaCom(txtNifoComanda.Text);
+                    if (comTrobada.Count() == 0)
+                    {
+                        MessageBox.Show("No hi ha cap comanda amb aquest número");
+                        txtNifoComanda.Text = "";
+                    }
+                    else
+                    {
+                        foreach (String s in comTrobada)
+                        {
+                            this.listBoxResultats.Items.Add(s);
+                        }
+                    }
                 }
             }
+            else
+            {
+                MessageBox.Show("Introdueix el Nºde Comanda");
+            }
+
         }
     }
 }
