@@ -55,19 +55,27 @@ namespace Online_Store_Windows_Forms.controlador
         {
             datos.creaComanda(txNComanda, txunitats, textdata, txNifClient, txArticle);
         }
-        public List<string> esborrarComanda(string txtNifoComanda)
+        public List<string> buscarComandaByNif(string txtNifoComanda)
         {
             List<string> list = new List<string>();
 
-            list = datos.esborrarComanda(txtNifoComanda);
+            list = datos.buscarComandaByNif(txtNifoComanda);
             return list;
         }
-        public List<string> esborrarComandaCom(string txtNifoComanda)
+        public List<string> buscarComandabyNcom(string txtNifoComanda)
         {
             List<string> list = new List<string>();
 
-            list = datos.esborrarComandaCom(txtNifoComanda);
+            list = datos.buscarComandabyNcom(txtNifoComanda);
             return list;
+        }
+        public void eliminaComandaByNif(string txtNifoComanda)
+        {
+            datos.eliminaComandaByNif(txtNifoComanda);
+        }
+        public void eliminaComandaByCom(string nComanda)
+        {
+            datos.eliminaComandaByCom(nComanda);
         }
 
     }

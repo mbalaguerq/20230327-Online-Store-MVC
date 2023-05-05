@@ -1,4 +1,5 @@
 ﻿using Online_Store_Windows_Forms.controlador;
+using Online_Store_Windows_Forms.modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,8 +47,28 @@ namespace Online_Store_Windows_Forms.vista
         }
         private void btEsborrar_Click(object sender, EventArgs e)
         {
-            txtNifoComanda.Text = "";
-            listBoxResultats.Items.Clear();
+            try
+            {
+                string nifoCom = txtNifoComanda.Text;
+
+                if (rBNifClient.Checked)
+                {
+                    comandaController.eliminaComandaByNif(nifoCom.ToUpper());
+                }
+                if(rBComanda.Checked)
+                {
+                    comandaController.eliminaComandaByCom(nifoCom);
+                }
+                txtNifoComanda.Text = "";
+                listBoxResultats.Items.Clear();
+                MessageBox.Show("Comanda eliminada correctament");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("S'ha produït un error a l'esborrar la comanda: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
         private void btBuscar_Click(object sender, EventArgs e)
         {
@@ -56,10 +77,10 @@ namespace Online_Store_Windows_Forms.vista
                 if (!txtNifoComanda.Text.Equals(""))
                 {
                     List<string> comTrobada = new List<string>();
-                    comTrobada = comandaController.esborrarComanda(txtNifoComanda.Text);
+                    comTrobada = comandaController.buscarComandaByNif(txtNifoComanda.Text.ToUpper());
                     if (comTrobada.Count() == 0)
                     {
-                        MessageBox.Show("No hi ha cap Nif amb aquest número");
+                        MessageBox.Show("No hi ha cap comanda amb aquest número de Nif");
                         txtNifoComanda.Text = "";
                     }
                     else
@@ -79,10 +100,10 @@ namespace Online_Store_Windows_Forms.vista
                 {
                     MessageBox.Show("El Nºde comanda només pot contenir números");
                 }
-                else if (!txtNifoComanda.Equals("") && txtNifoComanda.Text.Contains("0123456789"))
+                else if (!txtNifoComanda.Text.Contains("0123456789"))
                 {
                     List<string> comTrobada = new List<string>();
-                    comTrobada = comandaController.esborrarComandaCom(txtNifoComanda.Text);
+                    comTrobada = comandaController.buscarComandabyNcom(txtNifoComanda.Text);
                     if (comTrobada.Count() == 0)
                     {
                         MessageBox.Show("No hi ha cap comanda amb aquest número");

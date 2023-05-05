@@ -278,13 +278,14 @@ namespace Online_Store_Windows_Forms.modelo
             }
             comandes.Add(novaComanda);
         }
-        public List<string> esborrarComanda(string txtNifoComanda)
+        public List<string> buscarComandaByNif(string txtNif)
         {
             List<string> list = new List<string>();
 
             foreach (Comanda comanda in comandes)
             {
-                if (comanda.Client.Nif.Equals(txtNifoComanda))
+                txtNif.ToUpper();
+                if (comanda.Client.Nif.Equals(txtNif))
                 {
                     list.Add("Comanda " + comanda.NComanda);
                     list.Add("Client: " + comanda.Client.Nom);
@@ -298,7 +299,19 @@ namespace Online_Store_Windows_Forms.modelo
                 }
             }return list;
         }
-        public List<string> esborrarComandaCom(string txtNifoComanda)
+        public void eliminaComandaByNif(string txtNif)
+        {
+            foreach (Comanda comanda in comandes)
+            {
+                txtNif.ToUpper();
+                if (comanda.Client.Nif.Equals(txtNif))
+                {
+                    comandes.Remove(comanda);
+                    return;
+                }
+            }
+        }
+        public List<string> buscarComandabyNcom(string txtNifoComanda)
         {
             List<string> list = new List<string>();
 
@@ -319,6 +332,20 @@ namespace Online_Store_Windows_Forms.modelo
                 }
             }
             return list;
+        }
+        public void eliminaComandaByCom(string nComanda)
+        {
+            foreach (Comanda comanda in comandes)
+            {
+                int com;
+                com = int.Parse(nComanda);
+
+                if (comanda.NComanda == com)
+                {
+                    comandes.Remove(comanda);
+                    return;
+                }
+            }
         }
 
     }
