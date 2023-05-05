@@ -13,10 +13,12 @@ namespace Online_Store_Windows_Forms.modelo
         private Article article;
         int unitats;
         DateTime dataAvui;
+        DateTime dataEnviament;
 
         public int NComanda { get => nComanda; set => nComanda = value; }
         public int Unitats { get => unitats; set => unitats = value; }
         public DateTime DataAvui { get => dataAvui; set => dataAvui = value; }
+        public DateTime DataEnviament { get => dataEnviament; set => dataEnviament = value; }
         internal Client Client { get => client; set => client = value; }
         internal Article Article { get => article; set => article = value; }
     }

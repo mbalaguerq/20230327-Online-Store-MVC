@@ -51,7 +51,7 @@ namespace Online_Store_Windows_Forms.controlador
             return list;
         }
         public void creaComanda(string txNComanda, string txunitats, string textdata,
-                                string txNifClient, string txArticle)
+                                string txNifClient, string txArticle, DateTime selData)
         {
             datos.creaComanda(txNComanda, txunitats, textdata, txNifClient, txArticle);
         }
@@ -76,6 +76,13 @@ namespace Online_Store_Windows_Forms.controlador
         public void eliminaComandaByCom(string nComanda)
         {
             datos.eliminaComandaByCom(nComanda);
+        }
+
+        public int ComprovaDataEntrega(DateTime dateSelected)
+        {
+            int dispo;
+           dispo =  datos.ComprovaDataEntrega(dateSelected);
+
         }
 
     }

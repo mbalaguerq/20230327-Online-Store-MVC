@@ -90,9 +90,7 @@ namespace Online_Store_Windows_Forms.vista
                             this.listBoxResultats.Items.Add(s);
                         }
                     }
-                }
-                //&& 
-
+                }                
             }
             else if (rBComanda.Checked)
             {

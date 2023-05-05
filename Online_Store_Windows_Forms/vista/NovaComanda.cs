@@ -95,6 +95,29 @@ namespace Online_Store_Windows_Forms.vista
             }
             else { lbCampOblig.Visible = true; }
         }
+        private void selData_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime dateSelected = selData.Value;
+
+            if (dateSelected < DateTime.Now)
+            {
+                MessageBox.Show("La data no pot ser inferior a la data actual");
+            }
+            else
+            {
+                int disponible;
+                disponible =comandaController.ComprovaDataEntrega(dateSelected);
+
+                if(disponible > 4)
+                {
+                    MessageBox.Show("Data no disponible, seleccioni una altre data");
+
+                }
+
+            }
+        }
+
+
         private void btAcceptar_Click(object sender, EventArgs e)
         {
             if (!txunitats.Text.Equals(""))
@@ -110,7 +133,7 @@ namespace Online_Store_Windows_Forms.vista
                     this.lbMostraR.Items.Add(s);
                 }
                 comandaController.creaComanda(txNComanda.Text, txunitats.Text, textdata.Text,
-                                              txNifClient.Text, txArticle.Text);
+                                              txNifClient.Text, txArticle.Text, selData.Value);
 
 
             }
@@ -118,5 +141,12 @@ namespace Online_Store_Windows_Forms.vista
             { lbCampOblig2.Visible = true; }
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+ 
     }
 }

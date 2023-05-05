@@ -64,18 +64,20 @@ namespace Online_Store_Windows_Forms.modelo
 
             Comanda comanda1 = new Comanda();
             comanda1.NComanda = 499;
-            comanda1.DataAvui = DateTime.Parse("01/01/2023");
+            comanda1.DataAvui = DateTime.Parse("01/05/2023");
             comanda1.Unitats = 6;
             comanda1.Article = article3;
             comanda1.Client = cli1;
+            comanda1.DataEnviament = DateTime.Parse("10/05/2023");
             comandes.Add(comanda1);
 
             Comanda comanda2 = new Comanda();
             comanda2.NComanda = 498;
-            comanda2.DataAvui = DateTime.Parse("12/04/2023");
+            comanda2.DataAvui = DateTime.Parse("12/05/2023");
             comanda2.Unitats = 1;
             comanda2.Article = article1;
             comanda2.Client = cli2;
+            comanda2.DataEnviament = DateTime.Parse("14/05/2023");
             comandes.Add(comanda2);
         }
 
@@ -257,12 +259,13 @@ namespace Online_Store_Windows_Forms.modelo
             return list;
         }
         public void creaComanda(string txNComanda, string txunitats, string textdata,
-                                   string txNifClient, string txArticle)
+                                   string txNifClient, string txArticle, DateTime selData)
         {
             Comanda novaComanda = new Comanda();
             novaComanda.NComanda = int.Parse(txNComanda);
             novaComanda.Unitats = int.Parse(txunitats);
             novaComanda.DataAvui = DateTime.Parse(textdata);
+            novaComanda.DataEnviament = selData;
 
             foreach (Article arti in articles)
                 if (arti.Codi == txArticle)
@@ -346,6 +349,17 @@ namespace Online_Store_Windows_Forms.modelo
                     return;
                 }
             }
+        }
+        public int ComprovaDataEntrega(DateTime dateSelected)
+        {
+            int count = 0;
+            foreach (Comanda com in comandes)
+            {
+                if(com.DataEnviament == dateSelected)
+                    count++;
+            }
+
+            return count;
         }
 
     }
