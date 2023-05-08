@@ -53,7 +53,7 @@ namespace Online_Store_Windows_Forms.controlador
         public void creaComanda(string txNComanda, string txunitats, string textdata,
                                 string txNifClient, string txArticle, DateTime selData)
         {
-            datos.creaComanda(txNComanda, txunitats, textdata, txNifClient, txArticle);
+            datos.creaComanda(txNComanda, txunitats, textdata, txNifClient, txArticle, selData);
         }
         public List<string> buscarComandaByNif(string txtNifoComanda)
         {
@@ -82,7 +82,7 @@ namespace Online_Store_Windows_Forms.controlador
         {
             int dispo;
            dispo =  datos.ComprovaDataEntrega(dateSelected);
-
+            return dispo;
         }
 
     }
